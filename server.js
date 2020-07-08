@@ -48,9 +48,65 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 // Routes
 //___________________
 //localhost:3000
-app.get('/' , (req, res) => {
-  res.send('Hello World!');
+// app.get('/' , (req, res) => {
+//   res.send('Hello World!');
+// });
+
+//import workouts model
+const Workouts = require('./models/workouts.js');
+
+//Index
+app.get('/', (req, res)=>{
+    Workouts.find({}, (error, allWorkouts)=>{
+      res.render('index.ejs', {
+        workouts: allWorkouts
+        })
+    })
+  })
+
+  //New
+  app.get('/workouts/new', (req, res)=>{
+    res.render('new.ejs');
 });
+// show////
+app.get('/workouts/:id', (req, res) =>{
+    Workouts.findById(req.params.id, (err, foundWorkout)=>{
+      res.render('show.ejs', {
+        workout: foundWorkout,
+      })
+    })
+  })
+
+  // show////
+app.get('/workouts/:id/edit', (req, res) =>{
+    Workouts.findById(req.params.id, (err, foundWorkout)=>{
+    res.render('edit.ejs', {
+      workout: foundWorkout,
+    })
+  })
+})
+
+  //Post
+  app.post('/workouts', (req, res) => {
+    if(req.body && req.body.readyToShred){
+      req.body.readyToShred = (req.body.readyToShred == "on" ? true : false);
+    }
+    Workouts.create(req.body, (err, newWorkout) => {
+      console.log("created workout")
+      res.redirect('/');
+    });
+  });
+
+  //Edit
+  app.put('/workouts/edit/:id', (req, res) => {
+    if(req.body && req.body.readyToShred){
+      req.body.readyToShred = (req.body.readyToShred == "on" ? true : false);
+    }
+    Workouts.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedModel)=> {
+      res.redirect('/workouts');
+    })
+  });
+
 
 //___________________
 //Listener

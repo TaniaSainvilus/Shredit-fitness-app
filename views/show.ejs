@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <style type="text/css">
+        body {
+          color: blanchedalmond;
+          background-color: pink;
+          text-transform: capitalize;
+        }
+        .show-cont {
+            display: grid;
+            grid-template-columns: 1ft 4ft 1ft;
+            grid-template-rows: 1ft 3ft 1ft;
+        }
+        .item-header {
+            grid-column: 2 / span 1;
+            grid-row: 1 / span 1;
+        }
+        .img-link {
+            grid-column: 2 / span 1;
+            grid-row: 2 / span 1;
+        }
+        .price {
+            grid-column: 2 / span 1;
+            grid-row: 3 / span 1;
+        }
+      </style>
+</head>
+<body>
+    <a href='/'>Home</a>
+    <div class="show-cont">
+        <h4 class="item-header"><%=workout["name"]%></h4>
+        <div class="img-link"><img src=<%=workouts["img"]%> alt="item image"></div>
+        <p class="price">Price: $<%=product["price"]%></p>
+        <form action="/workouts/<%= workout[i].id%>?_method=DELETE" method="POST">
+            <input type="submit" value="Delete"/>
+        </form>
+        <a href="/workouts/<%=workout["id"]%>/edit">Edit</a>
+    </div>
+</body>
+</html>

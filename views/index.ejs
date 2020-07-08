@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shop</title>
+    <style type="text/css">
+        body {
+          color: blanchedalmond;
+          background-color: pink;
+          text-transform: capitalize;
+        }
+        h1 {
+            text-align: center;
+            font: arial;
+        }
+        .container {
+            width: 75%;
+            height: 400px;
+            display: grid;
+            grid-template-columns: 1ft 1ft 1ft;
+            grid-template-rows: auto;
+        }
+        .item {
+            grid-column: auto;
+            display: grid;
+            grid-template-columns: 1ft 4ft 1ft;
+            grid-template-rows: 1ft 3ft 1ft;
+        }
+        .item-header {
+            grid-column: 2 / span 1;
+            grid-row: 1 / span 1;
+        }
+        .img-link {
+            grid-column: 2 / span 1;
+            grid-row: 2 / span 1;
+        }
+        .price {
+            grid-column: 2 / span 1;
+            grid-row: 3 / span 1;
+        }
+      </style>
+</head>
+<body>
+    <a href='/workouts/new/'>Add a New Workout</a>
+    <h1>Shredit</h1>
+    <div class="container">
+        <% for (let i = 0; i <workouts.length; i++) { %>
+        <div class="item">
+            <h4 class="item-header"><%=workouts[i]["shredTarget"]%></h4>
+            <h4 class="item-header"><%=workouts[i]["shredWorkout"]%></h4>
+            <div class="img-link"><a href='/workouts/<%=workouts[i]["_id"]%>'><img src=<%=workouts[i]["img"]%> alt="item image" width="200" height="200"> </a></div>
+            <video width="640" height="480" src=<%=workouts[i]["video"]%> controls> Sorry, your browser doesn't support HTML5 <code>video</code>. </video>
+        </div>
+        <% } %>
+    </div>
+</body>
+</html>
