@@ -103,12 +103,16 @@ app.get('/workouts/:id/edit', (req, res) =>{
       req.body.readyToShred = (req.body.readyToShred == "on" ? true : false);
     }
     Workouts.findByIdAndUpdate(req.params.id, req.body, { new: true }, (err, updatedModel)=> {
-      res.redirect('/workouts');
+      res.redirect('/workouts/'+req.params.id);
     })
   });
 
-
+  app.delete('/workouts/:id', (req, res) => {
+    Workouts.findByIdAndRemove(req.params.id, { useFindAndModify: false }, (err, data)=>{
+      res.redirect('/') //redirect back to index
+    })
+  })
 //___________________
-//Listener
+//Listener 
 //___________________
 app.listen(PORT, () => console.log( 'Listening on port:', PORT));

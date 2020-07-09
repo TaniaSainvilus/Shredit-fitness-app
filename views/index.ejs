@@ -48,9 +48,7 @@
         <% for (let i = 0; i <workouts.length; i++) { %>
         <div class="item">
             <h4 class="item-header"><%=workouts[i]["shredTarget"]%></h4>
-            <h4 class="item-header"><%=workouts[i]["shredWorkout"]%></h4>
-            <div class="img-link"><a href='/workouts/<%=workouts[i]["_id"]%>'><img src=<%=workouts[i]["img"]%> alt="item image" width="200" height="200"> </a></div>
-            <video width="640" height="480" src=<%=workouts[i]["video"]%> controls> Sorry, your browser doesn't support HTML5 <code>video</code>. </video>
+            <div class="img-link"><a href='/workouts/<%=workouts[i]["_id"]%>'><img src=<%=workouts[i]["img"]%> alt="item image" width="200" height="200"> </a></div>            
         </div>
         <% } %>
     </div>

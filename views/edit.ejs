@@ -6,12 +6,12 @@
     </head>
     <body>
         <h1>What Do You Wanna Shred?</h1>
-        <form action="/workouts/edit/<%=product.id%>?_method=PUT" method="POST">
-            Shred Target: <input type="text" name="shredTarget" value=<%=workouts.shredTarget%>/><br/>
-            Shred it Workout: <input type="text" name="shredItWorkout" value=<%=workouts.shredItWorkout%> /><br/>
-            Img: <input type="url" name="img" value=<%=workouts.img%>/><br/>
-            Video: <input type="url" name="video" value=<%=workouts.img%>/><br/>
-            Ready To Shred: <input type="checkbox" name="readyToShred" /><br/>
+        <form action="/workouts/edit/<%=workout.id%>?_method=PUT" method="POST">
+            Shred Target: <input type="text" name="shredTarget" value="<%=workout.shredTarget%>"/><br/>
+            Shred it Workout: <input type="text" name="shredItWorkout" value="<%=workout.shredItWorkout%>" /><br/>
+            Img: <input type="url" name="img" value="<%=workout.img%>"/><br/>
+            Video: <input type="url" name="video" value="<%=workout.video%>"/><br/>
+            <!--  Ready To Shred: <input type="checkbox" name="readyToShred" /><br/>  -->
             <input type="submit" name="" value="Edit"/>
         </form>
     </body>

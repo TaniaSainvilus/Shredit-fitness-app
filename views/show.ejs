@@ -7,7 +7,7 @@
     <style type="text/css">
         body {
           color: blanchedalmond;
-          background-color: pink;
+          background-color: rgb(137, 137, 214);
           text-transform: capitalize;
         }
         .show-cont {
@@ -32,13 +32,13 @@
 <body>
     <a href='/'>Home</a>
     <div class="show-cont">
-        <h4 class="item-header"><%=workout["name"]%></h4>
-        <div class="img-link"><img src=<%=workouts["img"]%> alt="item image"></div>
-        <p class="price">Price: $<%=product["price"]%></p>
-        <form action="/workouts/<%= workout[i].id%>?_method=DELETE" method="POST">
+        <h4 class="item-header"><%=workout["shredTarget"]%></h4>
+        <h4 class="item-header"><%=workout["shredWorkout"]%></h4>
+        <video width="640" height="480" src=<%=workout["video"]%> controls> Sorry, your browser doesn't support HTML5 <code>video</code>. </video>
+        <form action="/workouts/<%= workout.id%>?_method=DELETE" method="POST">
             <input type="submit" value="Delete"/>
         </form>
-        <a href="/workouts/<%=workout["id"]%>/edit">Edit</a>
+        <a href="/workouts/<%=workout.id; %>/edit">Edit</a>
     </div>
 </body>
 </html>
