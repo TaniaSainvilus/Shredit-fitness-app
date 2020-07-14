@@ -1,6 +1,6 @@
 # Shredit Herokuapp
 
-Live Site: 
+Live Site: https://shreditapp.herokuapp.com/
 
 Problem: Organize all At-Home Workouts in one place
 
