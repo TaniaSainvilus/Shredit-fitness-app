@@ -63,15 +63,7 @@ const Workouts = require('./models/workouts.js');
 
 //Index
 app.get('/', (req, res)=>{
-    console.log("In GET '/'")
-    console.log("req "+req);
-    console.log("resp "+res)
     Workouts.find({}, (error, allWorkouts)=>{
-        console.log("MongoDB Find")
-        if(doc.length === 0 || err){
-            console.log(err);
-           res.render('error', { errorMsg: err } )
-        }
       res.render('index.ejs', {
         workouts: allWorkouts
       })
