@@ -1,56 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- <img src="/images/Shredit.png" id="logo"> -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
-    <style type="text/css">
-        body {
-          color: blanchedalmond;
-          background-color: pink;
-          text-transform: capitalize;
-        }
-        h1 {
-            text-align: center;
-            font: arial;
-        }
-        .container {
-            width: 75%;
-            height: 400px;
-            display: grid;
-            grid-template-columns: 1ft 1ft 1ft;
-            grid-template-rows: auto;
-        }
-        .item {
-            grid-column: auto;
-            display: grid;
-            grid-template-columns: 1ft 4ft 1ft;
-            grid-template-rows: 1ft 3ft 1ft;
-        }
-        .item-header {
-            grid-column: 2 / span 1;
-            grid-row: 1 / span 1;
-        }
-        .img-link {
-            grid-column: 2 / span 1;
-            grid-row: 2 / span 1;
-        }
-        .price {
-            grid-column: 2 / span 1;
-            grid-row: 3 / span 1;
-        }
-      </style>
+    <title>Shredit</title>
+        <link rel="stylesheet" type="text/css" href="/css/styleindex.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  
 </head>
+
 <body>
-    <a href='/workouts/new/'>Add a New Workout</a>
-    <h1>Shredit</h1>
-    <div class="container">
+    <nav id=sticky-nav>
+        <img id="shredit-img" src="/images/shredit.svg">
+        <a href='/workouts/new/'><i class="fa fa-plus-circle"></i> NEW SHREDit</a>
+    </nav>
+    <div id="shredit-intro">
+        <!-- <h4 id="shredit-query">What Do You Want To SHRED?</h4> -->
+    </div>
+    <div id="shredit-container-flex">
         <% for (let i = 0; i <workouts.length; i++) { %>
-        <div class="item">
-            <h4 class="item-header"><%=workouts[i]["shredTarget"]%></h4>
-            <div class="img-link"><a href='/workouts/<%=workouts[i]["_id"]%>'><img src=<%=workouts[i]["img"]%> alt="item image" width="200" height="200"> </a></div>            
-        </div>
+            <div class = "shredit-item">
+                <div class="shredit-image">
+                    <a href='/workouts/<%=workouts[i]["_id"]%>'><img src=<%=workouts[i]["img"]%> alt="item image" width="600px" height="250px"> </a>
+                    <h4 class="item-header"><b><%=workouts[i]["shredTarget"]%></b></h4>
+                </div>                    
+            </div>                 
         <% } %>
     </div>
+    <div id="new-shredit">
+        <footer>
+            <p>Created By: Tania Sainvilus</p>
+          </footer>
+    </div>
+    
 </body>
 </html>

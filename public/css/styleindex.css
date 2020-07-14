@@ -1,0 +1,105 @@
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  color: black;
+  background-color: rgb(238, 234, 234);
+}
+
+.fa {
+	color: rgb(245, 132, 38);
+}
+
+#sticky-nav {
+    overflow: hidden;
+    background-color: rgb(196, 196, 196);
+
+    height: 100px;
+    width: 100%; 
+
+    position: -webkit-sticky;  
+    position: sticky;
+    top: 0;
+}
+
+#sticky-nav a {
+    float: right;
+    background-color: rgb(196, 196, 196);
+    color: rgb(245, 132, 38);
+    text-align: center;
+    padding: 25px 25px;
+    text-decoration: none;
+    font-size: 35px;
+}
+
+#shredit-img {
+    margin: 7.5px;
+    border-radius: 15px
+}
+
+#shredit-intro {
+    background-image: url('/images/workout1.jpg');
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    width: 100%;
+    height: calc(100% - 100px);
+    margin-bottom: 5%;
+}
+
+#shredit-query {
+    width: 50%;
+    margin: auto;
+    text-align: center;
+}
+
+#shredit-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+} 
+
+.shredit-item {
+    display: grid;
+    flex: 0 0 calc(33.33% - 20px);
+    padding: 20px;
+    margin: 10px;
+
+    max-height: 550px;
+
+    position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr; 
+   
+
+}
+ 
+.shredit-image {
+    max-width: 80%; 
+    max-height: 80%; 
+    text-align: center;
+
+    display: block;
+    margin: auto;
+    position: relative;
+    border-radius: 15px;
+}
+
+
+.item-header {
+    position: absolute;
+    top: 30%;
+    left: 45%;
+    text-align: center;
+    text-shadow: 2px 2px rgb(0, 0, 0);
+    color: rgb(245, 132, 38);
+    font-weight: 900; 
+    font-size: 50px;
+    margin: 0;
+}

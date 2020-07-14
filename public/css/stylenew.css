@@ -1,0 +1,123 @@
+body {
+    background-color: rgb(238, 234, 234);
+    margin: 0;
+    height: 100%;
+    /* background:
+            linear-gradient(
+                rgba(209, 174, 146, 0.30), 
+                rgba(209, 174, 146, 0.30)
+            ),
+            url('/images/new.jpg');
+    background-position: 0% 0%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: scroll; */
+}
+.fa {
+	color: rgb(245, 132, 38);
+}
+h1 {
+    text-align: center;
+}
+.form{
+	max-width: 500px;
+	padding: 10px 20px;
+	background: #f4f7f8;
+	margin: 10px auto;
+	padding: 20px;
+	background: #f4f7f8;
+	border-radius: 8px;
+	font-family: 'Open Sans', sans-serif;
+}
+.form{
+	border: none;
+}
+.form{
+	font-size: 1.4em;
+	margin-bottom: 10px;
+}
+.form{
+	display: block;
+	margin-bottom: 8px;
+}
+.form input[type="text"],
+.form input[type="text"],
+.form input[type="url"],
+.form input[type="url"],
+.form textarea,
+.form select {
+	font-family:'Open Sans', sans-serif;
+	background: rgba(255,255,255,.1);
+	border: none;
+	border-radius: 4px;
+	font-size: 15px;
+	margin: 0;
+	outline: 0;
+	padding: 10px;
+	width: 100%;
+	box-sizing: border-box; 
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box; 
+	background-color: #e8eeef;
+	color:#8a97a0;
+	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	box-shadow: 0 1px 0 rgba(0,0,0,0.03) inset;
+	margin-bottom: 30px;
+}
+.form input[type="text"]:focus,
+.form input[type="text"]:focus,
+.form input[type="url"]:focus,
+.form input[type="url"]:focus,
+.form textarea:focus,
+.form select:focus{
+	background: #d2d9dd;
+}
+.formselect{
+	-webkit-appearance: menulist-button;
+	height:35px;
+}
+
+.form input[type="submit"],
+.form input[type="button"]
+{
+	position: relative;
+	display: block;
+	padding: 19px 39px 18px 39px;
+	color: #FFF;
+	margin: 0 auto;
+	background: rgb(245, 132, 38);
+	font-size: 18px;
+	text-align: center;
+	font-style: normal;
+	width: 100%;
+	border: 1px solid rgb(245, 132, 38);
+	border-width: 1px 1px 3px;
+	margin-bottom: 10px;
+}
+.form input[type="submit"]:hover,
+.form input[type="button"]:hover
+{
+	background: rgb(245, 132, 38);
+}
+
+#sticky-nav {
+    overflow: hidden;
+    background-color: rgb(196, 196, 196);
+
+    height: 100px;
+    width: 100%; 
+
+    position: -webkit-sticky;  
+    position: sticky;
+    top: 0;
+}
+    
+#sticky-nav a {
+    float: right;
+    background-color: rgb(196, 196, 196);
+    color: rgb(245, 132, 38);
+    text-align: center;
+    padding: 25px 25px;
+    text-decoration: none;
+    font-size: 35px;
+}

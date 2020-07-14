@@ -3,8 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shop</title>
-    <style type="text/css">
+    <title>Shredit</title>
+    <link rel="stylesheet" type="text/css" href="/css/styleshow.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        
+        <STYLE>A {text-decoration: none;} </STYLE>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
+
+  
+
+    <!-- <style type="text/css">
         body {
           color: blanchedalmond;
           background-color: rgb(137, 137, 214);
@@ -27,18 +36,22 @@
             grid-column: 2 / span 1;
             grid-row: 3 / span 1;
         }
-      </style>
+      </style> -->
 </head>
 <body>
-    <a href='/'>Home</a>
+    <nav id=sticky-nav>
+        <img id="shredit-img" src="/images/shredit.svg">
+        <a href='/'> <i class="fa fa-home fa-1x" aria-hidden="true" ></i></a>
+    </nav>
     <div class="show-cont">
-        <h4 class="item-header"><%=workout["shredTarget"]%></h4>
-        <h4 class="item-header"><%=workout["shredWorkout"]%></h4>
+        <!-- <h3 class="item-header"><%=workout["shredTarget"]%></h3> -->
+    </br>
+        <p class="item-header"><%=workout["shredWorkout"]%></p>
         <video width="640" height="480" src=<%=workout["video"]%> controls> Sorry, your browser doesn't support HTML5 <code>video</code>. </video>
         <form action="/workouts/<%= workout.id%>?_method=DELETE" method="POST">
-            <input type="submit" value="Delete"/>
+            <input type="submit" value="Delete" id="shredit-del"/>
         </form>
-        <a href="/workouts/<%=workout.id; %>/edit">Edit</a>
+        <a id = "shredit-edit" href="/workouts/<%=workout.id; %>/edit">Edit</a>
     </div>
 </body>
 </html>

@@ -34,7 +34,7 @@ db.on('open' , ()=>{});
 //___________________
 
 //use public folder for static assets
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 // populates req.body with parsed info from forms - if no data from forms will return an empty object {}
 app.use(express.urlencoded({ extended: false }));// extended: false - does not allow nested objects in query strings
@@ -55,6 +55,12 @@ app.use(methodOverride('_method'));// allow POST, PUT and DELETE from a form
 //import workouts model
 const Workouts = require('./models/workouts.js');
 
+// app.get('/', (req, res)=>{
+//     Workouts.find({}, (error, allWorkouts)=>{
+//       res.render('login.ejs')
+//     })
+//   })
+
 //Index
 app.get('/', (req, res)=>{
     Workouts.find({}, (error, allWorkouts)=>{
@@ -64,7 +70,7 @@ app.get('/', (req, res)=>{
     })
   })
 
-  //New
+  //News
   app.get('/workouts/new', (req, res)=>{
     res.render('new.ejs');
 });
@@ -106,6 +112,8 @@ app.get('/workouts/:id/edit', (req, res) =>{
       res.redirect('/workouts/'+req.params.id);
     })
   });
+
+  //Delete
 
   app.delete('/workouts/:id', (req, res) => {
     Workouts.findByIdAndRemove(req.params.id, { useFindAndModify: false }, (err, data)=>{

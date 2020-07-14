@@ -2,17 +2,28 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <title></title>
+        <title>Shredit</title>
+        <link rel="stylesheet" type="text/css" href="/css/stylenew.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+        
+  
     </head>
     <body>
-        <h1>What Do You Wanna Shred?</h1>
+        <nav id=sticky-nav>
+            <img id="shredit-img" src="/images/shredit.svg">
+            <a href='/'> <i class="fa fa-home fa-1x" aria-hidden="true" ></i></a>
+        </nav>
+        <div class = "form">
+        <h1>What Do You Want To Shred?</h1>
         <form action="/workouts" method="POST">
-            Shred Target: <input type="text" name="shredTarget"/><br/>
-            Shred it Workout: <input type="text" name="shredWorkout"/><br/>
-            Img: <input type="url" name="img"/><br/>
-            video: <input type="url" name="video" /><br/>
-            Ready To Shred: <input type="checkbox" name="readyToShred" /><br/>
+            Shredit Target: <input type="text" name="shredTarget"/><br/>
+            Shredit Workout: <input type="text" name="shredWorkout"/><br/>
+            Shredit Image: <input type="url" name="img"/><br/>
+            Shredit Video: <input type="url" name="video" /><br/>
+            <!-- Ready To Shred: <input type="checkbox" name="readyToShred" /><br/> -->
             <input type="submit" name="" value="Shredit"/>
         </form>
+        </div>
     </body>
 </html>
